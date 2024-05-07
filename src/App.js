@@ -1,7 +1,7 @@
 import './App.css';
+import Cart from './Customer/components/Cart/Cart.jsx';
 import Footer from './Customer/components/Footer/Footer';
 import { Navigation } from './Customer/components/Navigation/Navigation.jsx';
-import { ProductDetails } from './Customer/components/ProductDetails/ProductDetails.jsx';
 function App() {
   return (
     <>
@@ -11,7 +11,8 @@ function App() {
       <div>
         {/* <HomePage /> */}
         {/* <Product/> */}
-        <ProductDetails/>
+        {/* <ProductDetails/> */}
+        <Cart/>
       </div>
        <Footer/>
     </>
