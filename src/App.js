@@ -1,7 +1,7 @@
 import './App.css';
 import Footer from './Customer/components/Footer/Footer';
-import Navigation from './Customer/components/Navigation/Navigation';
-import HomePage from './Customer/pages/HomePage/HomePage';
+import { Navigation } from './Customer/components/Navigation/Navigation.jsx';
+import { Product } from './Customer/components/Product/Product.jsx';
 
 function App() {
   return (
@@ -10,7 +10,8 @@ function App() {
         <Navigation />
       </div>
       <div>
-        <HomePage />
+        {/* <HomePage /> */}
+        <Product/>
       </div>
        <Footer/>
     </>
