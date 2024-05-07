@@ -209,7 +209,7 @@ export const ProductDetails = () => {
                                     </RadioGroup>
                                 </div>
 
-                                <Button color='secondary' variant='contained' sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd", mt:"1rem" }}>
+                                <Button color='secondary' variant='contained' sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd", mt: "1rem" }}>
                                     Add to Cart
                                 </Button>
                             </form>
@@ -318,13 +318,13 @@ export const ProductDetails = () => {
                     </div>
                 </section>
                 {/* Similar Products */}
-                <section className='pt-10'> 
-                                    <h1 className='py-5 text-xl font-bold'>Similar Products</h1>
-                                    <div className='flex flex-wrap space-y-5 justify-center'>
-                                        {mens_kurta.map((product)=>{
-                                            return <HomeSectionCard product={product}/>
-                                        })}
-                                    </div>
+                <section className='pt-10'>
+                    <h1 className='py-5 text-xl font-bold'>Similar Products</h1>
+                    <div className='flex flex-wrap space-y-5 justify-center'>
+                        {mens_kurta.map((product) => {
+                            return <HomeSectionCard product={product} />
+                        })}
+                    </div>
                 </section>
             </div>
         </div>
