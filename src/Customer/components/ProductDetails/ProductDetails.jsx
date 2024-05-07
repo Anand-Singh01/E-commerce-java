@@ -1,6 +1,7 @@
 import { RadioGroup } from '@headlessui/react';
-import { Button, Rating } from '@mui/material';
+import { Button, Grid, Rating } from '@mui/material';
 import { useState } from 'react';
+import ProductReviewCard from './ProductReviewCard';
 
 const product = {
     name: 'Basic Tee 6-Pack',
@@ -61,7 +62,7 @@ export const ProductDetails = () => {
     const [selectedSize, setSelectedSize] = useState(product.sizes[2])
 
     return (
-        <div className="bg-white">
+        <div className="bg-white lg:px-20">
             <div className="pt-6">
                 <nav aria-label="Breadcrumb">
                     <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -132,18 +133,18 @@ export const ProductDetails = () => {
                         <div className="mt-4 lg:row-span-3 lg:mt-0">
                             <h2 className="sr-only">Product information</h2>
                             <div className='flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-6'>
-                            <p className='font-semibold'>$200</p>
-                            <p className='opacity-50 line-through'>$220</p>
-                            <p className='text-green-600 font-semibold'>5% Off</p>
+                                <p className='font-semibold'>$200</p>
+                                <p className='opacity-50 line-through'>$220</p>
+                                <p className='text-green-600 font-semibold'>5% Off</p>
                             </div>
                             {/* Reviews */}
                             <div className="mt-6">
                                 <div className='flex items-center space-x-3'>
-                                <Rating name="read-only" value={4.5} readOnly />
-                                <p className='opacity-50 text-sm'>200 Ratings</p>
-                                <p className='ml-3 text-sm font-medium text-indigo-600 text-indigo-500'>3000 Reviews</p>
+                                    <Rating name="read-only" value={4.5} readOnly />
+                                    <p className='opacity-50 text-sm'>200 Ratings</p>
+                                    <p className='ml-3 text-sm font-medium text-indigo-600 text-indigo-500'>3000 Reviews</p>
                                 </div>
-                                
+
                             </div>
 
                             <form className="mt-10">
@@ -206,7 +207,7 @@ export const ProductDetails = () => {
                                     </RadioGroup>
                                 </div>
 
-                                <Button color='secondary' variant='contained' sx={{px:"2rem", py:"1rem", bgcolor:"#9155fd"}}>
+                                <Button color='secondary' variant='contained' sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd" }}>
                                     Add to Cart
                                 </Button>
                             </form>
@@ -248,8 +249,29 @@ export const ProductDetails = () => {
                 </section>
                 {/* {Rating and reviews} */}
                 <section>
-                                        <h1 className='font-semibold text-lg pb-4'>Recent review and rating</h1>
+                    <h1 className='font-semibold text-lg pb-4'>Recent review and rating</h1>
+                    <div className='border p-5'>
+                        <Grid container spacing={7}>
+                            <Grid item xs={7}>
+                                <div className='space-y-5'>
+                                    {
+                                        [1, 1, 1, 1].map((item) => {
+                                            return <ProductReviewCard />
+                                        })
+                                    }
+                                </div>
+                            </Grid>
 
+                            <Grid item xs={5}>
+                                <h1 className='text-xl font-semibold pb-1'>Product Ratings</h1>
+                                <div>
+                                    <Rating value={4.6} precision={0.5} readOnly >
+                                        <p className='opacity-60'>5005 ratings</p>
+                                    </Rating>
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </div>
                 </section>
             </div>
         </div>
