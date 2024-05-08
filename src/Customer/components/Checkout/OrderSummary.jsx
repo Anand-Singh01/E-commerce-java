@@ -10,7 +10,7 @@ const OrderSummary = () => {
             <AddressCard/>
         </div>
 
-        <div>
+        <div className='mt-5'>
             <div className='lg:grid grid-cols-3 relative'>
                 <div className='col-span-2'>
                     <div className='flex flex-col gap-2'>

@@ -1,6 +1,7 @@
 import { RadioGroup } from '@headlessui/react';
 import { Box, Button, Grid, LinearProgress, Rating } from '@mui/material';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { mens_kurta } from '../../../Data/mens_Kurta';
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 import ProductReviewCard from './ProductReviewCard';
@@ -62,7 +63,12 @@ function classNames(...classes) {
 export const ProductDetails = () => {
     const [selectedColor, setSelectedColor] = useState(product.colors[0])
     const [selectedSize, setSelectedSize] = useState(product.sizes[2])
-
+    const navigate = useNavigate();
+    
+    const handleAddToCart = ()=>
+    {
+        navigate("/cart");
+    }
     return (
         <div className="bg-white lg:px-20">
             <div className="pt-6">
@@ -209,7 +215,7 @@ export const ProductDetails = () => {
                                     </RadioGroup>
                                 </div>
 
-                                <Button color='secondary' variant='contained' sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd", mt: "1rem" }}>
+                                <Button onClick={handleAddToCart} color='secondary' variant='contained' sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd", mt: "1rem" }}>
                                     Add to Cart
                                 </Button>
                             </form>

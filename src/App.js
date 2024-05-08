@@ -1,20 +1,14 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Cart from './Customer/components/Cart/Cart.jsx';
-import Footer from './Customer/components/Footer/Footer';
-import { Navigation } from './Customer/components/Navigation/Navigation.jsx';
+import CustomerRoutes from './Routers/CustomerRoutes.jsx';
 function App() {
   return (
     <>
       <div>
-        <Navigation />
+        <Routes>
+          <Route path='/*' element={<CustomerRoutes />} />
+        </Routes>
       </div>
-      <div>
-        {/* <HomePage /> */}
-        {/* <Product/> */}
-        {/* <ProductDetails/> */}
-        <Cart/>
-      </div>
-       <Footer/>
     </>
 
   );
